@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Downloading..."
+python download.py $1 > $2.html
+echo "Converting HTML to md..."
+htmltomd $2.html $2.md
+rm $2.html
+echo "Converting md to HTML..."
+mdtohtml $2.md $2.html
